@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shreya chaudhary | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0b1120;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#38bdf8,transparent 60%);
+top:-200px;
+left:-200px;
+opacity:0.2;
+z-index:-1;
+animation:float 8s ease-in-out infinite alternate;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,#6366f1,transparent 60%);
+bottom:-200px;
+right:-200px;
+opacity:0.2;
+z-index:-1;
+animation:float 10s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+100%{transform:translateY(30px);}
+}
+
+header{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(15,23,42,0.6);
+backdrop-filter:blur(15px);
+transition:.4s;
+z-index:1000;
+}
+
+header.scrolled{
+padding:12px 8%;
+background:rgba(15,23,42,0.9);
+}
+
+.logo{
+font-size:24px;
+font-weight:800;
+background:linear-gradient(45deg,#38bdf8,#6366f1);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+nav a{
+text-decoration:none;
+color:#cbd5e1;
+margin-left:25px;
+font-size:14px;
+position:relative;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:2px;
+background:#38bdf8;
+left:0;
+bottom:-5px;
+transition:.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+section{
+padding:120px 8%;
+min-height:100vh;
+}
+
+.hero{
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero h1{
+font-size:52px;
+font-weight:800;
+line-height:1.2;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+.hero p{
+margin-top:20px;
+color:#94a3b8;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:14px 35px;
+border-radius:50px;
+background:linear-gradient(45deg,#38bdf8,#6366f1);
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+box-shadow:0 10px 25px rgba(56,189,248,0.3);
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 20px 40px rgba(56,189,248,0.5);
+}
+
+.hero-img{
+width:350px;
+height:350px;
+border-radius:50%;
+background:linear-gradient(45deg,#38bdf8,#6366f1);
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 60px rgba(56,189,248,0.4);
+animation:float 6s ease-in-out infinite alternate;
+}
+
+.hero-img img{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid #0b1120;
+}
+
+.card{
+background:rgba(30,41,59,0.6);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.05);
+border-radius:15px;
+padding:25px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.project-card{
+overflow:hidden;
+padding:0;
+}
+
+.project-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
+border-radius:15px 15px 0 0;
+transition:0.4s;
+}
+
+.project-card h3{
+padding:20px;
+font-size:18px;
+font-weight:600;
+color:#e2e8f0;
+}
+
+.project-card:hover img{
+transform:scale(1.05);
+}
+
+input, textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border-radius:8px;
+border:none;
+background:#1e293b;
+color:white;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111827;
+color:#94a3b8;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+}
+.hero-img{
+margin-top:40px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header id="header">
+<div class="logo">SHREYA CHAUDHARY</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="hero-text">
+<h1>Hi, I'm <span>Shreya Chaudhary</span></h1>
+<p id="typing"></p>
+<a href="#contact" class="btn">Let's Work Together</a>
+</div>
+
+<div class="hero-img">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt6u-XyNWrcqRM0jbXp12kaPUdKu2KvmhX4A&s" alt="">
+</div>
+</section>
+
+<section id="about" class="reveal">
+<h2>About Me</h2>
+<div class="card" style="margin-top:30px;">
+<p>I am a passionate web developer skilled in building responsive and interactive websites using HTML, CSS, and JavaScript. I focus on clean design, performance optimization, and delivering user-friendly digital experiences. Secondly i belive on making myself diversify to gain and share the amount of positive knowledge</p>
+</div>
+</section>
+
+<section id="skills" class="reveal">
+<h2>Skills</h2>
+<div class="grid">
+<div class="card">HTML5</div>
+<div class="card">CSS3</div>
+<div class="card">JavaScript</div>
+<div class="card">Responsive Design</div>
+<div class="card">Git & GitHub</div>
+<div class="card">UI/UX Principles</div>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card project-card">
+<img src="1677073013667_image-gallery-grids.webp" alt="">
+<h3>Modern Image Gallery</h3>
+</div>
+
+<div class="card project-card">
+<img src="54d9dd80-73ae-11eb-81a0-cd36264018e6.jpeg" alt="">
+<h3>Advanced Calculator App</h3>
+</div>
+
+<div class="card project-card">
+<img src="il_fullxfull.6607106719_ha19.avif" alt="">
+<h3>Animated Portfolio Website</h3>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<h2>Contact Me</h2>
+<div class="card" style="margin-top:30px;">
+<form onsubmit="return false;">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+</div>
+</section>
+
+<footer>
+© 2026 shreya chaudhary | All Rights Reserved
+</footer>
+
+<script>
+const text="Frontend Developer | UI Designer | Creative Thinker";
+let i=0;
+function typing(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typing,50);
+}
+}
+typing();
+
+function reveal(){
+let reveals=document.querySelectorAll(".reveal");
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+if(elementTop<windowHeight-100){
+reveals[i].classList.add("active");
+}
+}
+}
+window.addEventListener("scroll",reveal);
+
+window.addEventListener("scroll",function(){
+document.getElementById("header").classList.toggle("scrolled",window.scrollY>50);
+});
+</script>
+
+</body>
+</html>
